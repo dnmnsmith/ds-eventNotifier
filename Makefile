@@ -38,6 +38,7 @@ clean:
 clobber:
 	rm -f $(LIBOBJS) $(EXEOBJS) $(LIBNAME) $(EXENAME)
 
+# sudo make install
 install:
 	cp -f $(EXENAME) $(INSTALLEXEDIR)
 	cp -f $(LIBNAME) $(INSTALLLIBDIR)

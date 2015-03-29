@@ -6,7 +6,6 @@
 
 #include <boost/lexical_cast.hpp>
 
-#include <iostream>
 #include <cxxtools/log.h>
 #include <cxxtools/json/rpcclient.h>
 #include <cxxtools/remoteprocedure.h>
