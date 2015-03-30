@@ -31,17 +31,17 @@ eventNotifier::~eventNotifier()
 
 void eventNotifier::notifySensor( const std::string &sensorId, const std::string &measurement, const std::string &value )
 {
-  std::cerr << "notify( " << sensorId << ", " << measurement << ", " << value << "); " << std::endl;    
+   std::cerr << "notify( " << sensorId << ", " << measurement << ", " << value << "); " << std::endl;    
 
    try
    {
 
-    std::cerr << "Create client " <<    m_serverName << " port " << m_jsonPort << std::endl;
+//    std::cerr << "Create client " <<    m_serverName << " port " << m_jsonPort << std::endl;
    
     // and a json rpc client
     cxxtools::json::RpcClient client(m_serverName, m_jsonPort);
 
-    std::cerr << "Create rpc" << std::endl;
+//    std::cerr << "Create rpc" << std::endl;
 
     // Define remote procedure with dobule return value and a 2 double
     // parameters.
@@ -49,7 +49,7 @@ void eventNotifier::notifySensor( const std::string &sensorId, const std::string
 
     // and now call the remote function   
 
-    std::cerr << "Call it" << std::endl;
+//    std::cerr << "Call it" << std::endl;
 
      int result = logEventSensor( sensorId, measurement,value );
  

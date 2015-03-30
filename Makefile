@@ -28,7 +28,7 @@ $(LIBNAME): $(LIBOBJS)
 	$(CXX) -shared -Wl,-soname,$@ -o $@ $(LIBOBJS) $(LIBS)
 
 $(EXENAME): $(EXEOBJS) $(LIBNAME)
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS) -l$(LIBBARENAME)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS) -L. -l$(LIBBARENAME)
 
 .PHONY: clean clobber all install
 
