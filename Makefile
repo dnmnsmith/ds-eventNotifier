@@ -11,7 +11,7 @@ LIBNAME=lib$(LIBBARENAME).so
 EXENAME=notifyEvent
 
 LDIR =
-LIBS=-lboost_thread -lboost_system  -lboost_filesystem -lcxxtools -lcxxtools-json  -lrt -lm  -pthread 
+LIBS=-lboost_thread -lboost_system  -lboost_filesystem -lcxxtools -lcxxtools-json -lcxxtools-http -lrt -lm  -pthread 
 LIBHEADER=eventNotifier.h
 DEPS=$(LIBHEADER)
 
