@@ -64,3 +64,40 @@ void eventNotifier::notifySensor( const std::string &sensorId, const std::string
   }
   
 }
+
+void eventNotifier::notifyLocation( const std::string &location, const std::string &measurement, const std::string &value )
+{
+   std::cerr << "notify( " << location << ", " << measurement << ", " << value << "); " << std::endl;
+
+   try
+   {
+
+//    std::cerr << "Create client " <<    m_serverName << " port " << m_jsonPort << std::endl;
+
+    // and a json rpc client
+    cxxtools::json::RpcClient client(m_serverName, m_jsonPort);
+
+//    std::cerr << "Create rpc" << std::endl;
+
+    // Define remote procedure with dobule return value and a 2 double
+    // parameters.
+    cxxtools::RemoteProcedure<int, std::string, std::string, std::string> logEventLocation(client, "logEventLocation");
+
+    // and now call the remote function
+
+//    std::cerr << "Call it" << std::endl;
+
+     int result = logEventLocation( location, measurement,value );
+
+     if (result != 0 )
+     {
+      std::cerr << "notify( " << location << ", " << measurement << ", " << value << "); failed with " << result << std::endl;
+     }
+   }
+  catch (const std::exception& e)
+  {
+    std::cerr << "notify( " << location << ", " << measurement << ", " << value << "); failed with " << e.what() << std::endl;
+  }
+
+}
+

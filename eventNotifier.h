@@ -18,6 +18,7 @@ public:
 	virtual ~eventNotifier();
 
 	void notifySensor( const std::string &sensorId, const std::string &measurement, const std::string &value );
+	void notifyLocation( const std::string &location, const std::string &measurement, const std::string &value );
 
 private:
 	int m_jsonPort;
